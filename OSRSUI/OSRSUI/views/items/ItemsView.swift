@@ -10,22 +10,25 @@ import SwiftUI
 
 struct ItemsView: View {
     
-    @ObservedObject var viewModel = ItemsViewModel()
+    @ObservedObject private var viewModel = ItemsViewModel()
+    @State private var searchText = ""
     
     var body: some View {
-        List {
-            ForEach(viewModel.items) { item in
-                HStack {
-                    Image(uiImage: item.iconAsImage)
-                    Text(item.name)
+        NavigationView {
+            List {
+                TextField("Search an item", text: $searchText)
+                ForEach(viewModel.items) { item in
+                    NavigationLink(destination: ItemDetailView(item: item)) {
+                        ItemRow(item: item)
+                    }
                 }
-            }
-            if !self.viewModel.items.isEmpty {
-                Text("Loading next page...")
-                    .onAppear {
-                        self.viewModel.fetchNextPage()
+                if !self.viewModel.items.isEmpty {
+                    Text("Loading next page...")
+                        .onAppear {
+                            self.viewModel.fetchNextPage()
+                    }
                 }
-            }
+            }.navigationBarTitle("Items")
         }.onAppear {
             self.viewModel.fetch()
         }
