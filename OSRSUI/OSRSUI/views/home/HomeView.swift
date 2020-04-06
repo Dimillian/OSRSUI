@@ -26,6 +26,8 @@ struct HomeView: View {
             switch self {
             case .items:
                 return AnyView(ItemsView())
+            case .monsters:
+                return AnyView(MonstersView())
             default:
                 return AnyView(Text("Work in progress"))
             }

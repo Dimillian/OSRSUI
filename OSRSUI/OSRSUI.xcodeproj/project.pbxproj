@@ -18,6 +18,12 @@
 		69676C2E2409692A008639EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69676C2D2409692A008639EC /* HomeView.swift */; };
 		69676C30240BBDD1008639EC /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69676C2F240BBDD1008639EC /* ItemDetailView.swift */; };
 		69676C33240BBF81008639EC /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69676C32240BBF81008639EC /* ItemRow.swift */; };
+		69A571FB243B1E5D00895C25 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A571FA243B1E5D00895C25 /* Monster.swift */; };
+		69A571FD243B1F3200895C25 /* MonstersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A571FC243B1F3200895C25 /* MonstersView.swift */; };
+		69A571FF243B1F3F00895C25 /* MonstersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A571FE243B1F3F00895C25 /* MonstersViewModel.swift */; };
+		69A57201243B1FC200895C25 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A57200243B1FC200895C25 /* HTTP.swift */; };
+		69A57208243B222600895C25 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A57207243B222600895C25 /* SearchField.swift */; };
+		69A5720B243B23DA00895C25 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A5720A243B23DA00895C25 /* BaseViewModel.swift */; };
 		69DA403B24094D4B00A3D357 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DA403A24094D4B00A3D357 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,12 @@
 		69676C2D2409692A008639EC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		69676C2F240BBDD1008639EC /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69676C32240BBF81008639EC /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		69A571FA243B1E5D00895C25 /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		69A571FC243B1F3200895C25 /* MonstersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonstersView.swift; sourceTree = "<group>"; };
+		69A571FE243B1F3F00895C25 /* MonstersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonstersViewModel.swift; sourceTree = "<group>"; };
+		69A57200243B1FC200895C25 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		69A57207243B222600895C25 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		69A5720A243B23DA00895C25 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		69DA403A24094D4B00A3D357 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +83,7 @@
 				69DA403724094CBE00A3D357 /* launch */,
 				69DA403824094CC500A3D357 /* views */,
 				69DA403924094D3C00A3D357 /* services */,
+				69A57209243B23C600895C25 /* viewModels */,
 				69676C2424094E05008639EC /* models */,
 				695EF67123FE86D800E106F0 /* Assets.xcassets */,
 				695EF67623FE86D800E106F0 /* LaunchScreen.storyboard */,
@@ -92,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				69676C2A24095239008639EC /* Item.swift */,
+				69A571FA243B1E5D00895C25 /* Monster.swift */,
+				69A57200243B1FC200895C25 /* HTTP.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -107,12 +122,37 @@
 		69676C2C2409640B008639EC /* items */ = {
 			isa = PBXGroup;
 			children = (
-				69676C28240951E5008639EC /* ItemsViewModel.swift */,
 				69676C26240951A9008639EC /* ItemsView.swift */,
 				69676C32240BBF81008639EC /* ItemRow.swift */,
 				69676C2F240BBDD1008639EC /* ItemDetailView.swift */,
 			);
 			path = items;
+			sourceTree = "<group>";
+		};
+		69A571F9243B1E4F00895C25 /* monsters */ = {
+			isa = PBXGroup;
+			children = (
+				69A571FC243B1F3200895C25 /* MonstersView.swift */,
+			);
+			path = monsters;
+			sourceTree = "<group>";
+		};
+		69A57206243B221900895C25 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				69A57207243B222600895C25 /* SearchField.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		69A57209243B23C600895C25 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				69A5720A243B23DA00895C25 /* BaseViewModel.swift */,
+				69A571FE243B1F3F00895C25 /* MonstersViewModel.swift */,
+				69676C28240951E5008639EC /* ItemsViewModel.swift */,
+			);
+			path = viewModels;
 			sourceTree = "<group>";
 		};
 		69DA403724094CBE00A3D357 /* launch */ = {
@@ -127,6 +167,8 @@
 		69DA403824094CC500A3D357 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				69A57206243B221900895C25 /* shared */,
+				69A571F9243B1E4F00895C25 /* monsters */,
 				69676C2C2409640B008639EC /* items */,
 				69676C2524095155008639EC /* home */,
 			);
@@ -212,12 +254,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A571FB243B1E5D00895C25 /* Monster.swift in Sources */,
+				69A571FF243B1F3F00895C25 /* MonstersViewModel.swift in Sources */,
 				69676C33240BBF81008639EC /* ItemRow.swift in Sources */,
 				695EF66C23FE86D600E106F0 /* AppDelegate.swift in Sources */,
+				69A57208243B222600895C25 /* SearchField.swift in Sources */,
 				69676C2E2409692A008639EC /* HomeView.swift in Sources */,
+				69A571FD243B1F3200895C25 /* MonstersView.swift in Sources */,
 				69676C27240951A9008639EC /* ItemsView.swift in Sources */,
+				69A57201243B1FC200895C25 /* HTTP.swift in Sources */,
 				695EF66E23FE86D600E106F0 /* SceneDelegate.swift in Sources */,
 				69676C30240BBDD1008639EC /* ItemDetailView.swift in Sources */,
+				69A5720B243B23DA00895C25 /* BaseViewModel.swift in Sources */,
 				69676C29240951E5008639EC /* ItemsViewModel.swift in Sources */,
 				69676C2B24095239008639EC /* Item.swift in Sources */,
 				69DA403B24094D4B00A3D357 /* APIService.swift in Sources */,
