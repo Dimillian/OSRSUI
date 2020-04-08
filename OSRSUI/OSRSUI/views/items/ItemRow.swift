@@ -13,7 +13,7 @@ struct ItemRow: View {
     
     var body: some View {
         HStack {
-            Image(uiImage: item.iconAsImage)
+            Image(uiImage: item.icon.asImage)
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.name).font(.headline)
                 Text(item.examine).font(.subheadline)

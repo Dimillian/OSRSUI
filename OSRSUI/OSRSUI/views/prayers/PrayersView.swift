@@ -1,23 +1,22 @@
 //
-//  MonstersView.swift
+//  PrayersView.swift
 //  OSRSUI
 //
-//  Created by Thomas Ricouard on 06/04/2020.
+//  Created by Thomas Ricouard on 08/04/2020.
 //  Copyright © 2020 Thomas Ricouard. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 
-struct MonstersView: View {
-    @ObservedObject private var viewModel = MonstersViewModel()
+struct PrayersView: View {
+    @ObservedObject private var viewModel = PrayersViewModel()
     
     var body: some View {
         NavigationView {
             List {
                 SearchField(searchText: $viewModel.searchText)
-                ForEach(viewModel.objects) { monster in
-                    Text(monster.name)
+                ForEach(viewModel.objects) { prayer in
+                    PrayerRow(prayer: prayer)
                 }
                 if !viewModel.objects.isEmpty && viewModel.searchText.isEmpty && viewModel.canLoadMorePages {
                     Text("Loading next page...")
@@ -26,7 +25,7 @@ struct MonstersView: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("Monsters"))
+            .navigationBarTitle(Text("Prayers"))
         }
         .onAppear {
             self.viewModel.fetch()

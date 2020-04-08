@@ -12,7 +12,7 @@ import SwiftUI
 struct Item: Codable, Identifiable {
     let id: String
     let name: String
-    let icon: String
+    let icon: Icon
     let examine: String
     
     let tradeable: Bool
@@ -20,16 +20,6 @@ struct Item: Codable, Identifiable {
     let cost: Int
     
     let wiki_url: URL
-}
-
-extension Item {
-    var iconAsImage: UIImage {
-        guard let data = Data(base64Encoded: icon),
-            let image = UIImage(data: data) else {
-            return UIImage()
-        }
-        return image
-    }
 }
 
 let PREVIEW_ITEM = Item(id: "0",

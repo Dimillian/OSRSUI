@@ -23,6 +23,17 @@ class BaseViewModel<T: Codable & Identifiable>: ObservableObject {
     
     var page = 1
     
+    var canLoadMorePages: Bool {
+        return objects.count < totalResults
+    }
+    
+    private var currentMeta = ArrayResponse<T>.Meta(page: 0, max_results: 0, total: 0) {
+        didSet {
+            page = currentMeta.page
+            totalResults = currentMeta.total
+        }
+    }
+    
     private var currentObjects: [T] = [] {
         didSet {
             if page == 1 {
@@ -48,8 +59,8 @@ class BaseViewModel<T: Codable & Identifiable>: ObservableObject {
             apiCancellable?.cancel()
         }
     }
-    private let itemsPerPage = 25
     
+    private var totalResults = 26
     
     init(endpoint: APIService.Endpoint) {
         self.endpoint = endpoint
@@ -68,7 +79,7 @@ class BaseViewModel<T: Codable & Identifiable>: ObservableObject {
     }
     
     func fetchNextPage() {
-        guard objects.count == page * itemsPerPage else {
+        guard canLoadMorePages else {
             return
         }
         page += 1
@@ -82,12 +93,16 @@ class BaseViewModel<T: Codable & Identifiable>: ObservableObject {
         }
         apiPublisher = APIService.fetch(endpoint: endpoint,
                                         params: params)
-            .replaceError(with: ArrayResponse(_items: []))
+            .replaceError(with: ArrayResponse(_items: [], _meta: ArrayResponse.Meta(page: 0,
+                                                                                    max_results: 0,
+                                                                                    total: 0)))
             .eraseToAnyPublisher()
         apiCancellable = apiPublisher?
-            .map{ $0._items }
             .receive(on: DispatchQueue.main)
-            .assign(to: \.currentObjects, on: self)
+            .sink(receiveValue:  { [weak self] response in
+                self?.currentObjects = response._items
+                self?.currentMeta = response._meta
+            })
     }
 }
 

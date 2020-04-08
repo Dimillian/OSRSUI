@@ -14,7 +14,7 @@ struct ItemDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Image(uiImage: item.iconAsImage)
+                Image(uiImage: item.icon.asImage)
                     .resizable()
                     .frame(width: 50, height: 50)
                 Text(item.examine)

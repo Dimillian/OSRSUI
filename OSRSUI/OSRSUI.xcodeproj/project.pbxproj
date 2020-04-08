@@ -24,6 +24,11 @@
 		69A57201243B1FC200895C25 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A57200243B1FC200895C25 /* HTTP.swift */; };
 		69A57208243B222600895C25 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A57207243B222600895C25 /* SearchField.swift */; };
 		69A5720B243B23DA00895C25 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A5720A243B23DA00895C25 /* BaseViewModel.swift */; };
+		69AF8C3A243DBAC2001DD9CB /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C39243DBAC2001DD9CB /* Prayer.swift */; };
+		69AF8C3C243DBB11001DD9CB /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C3B243DBB11001DD9CB /* Icon.swift */; };
+		69AF8C3F243DBBCB001DD9CB /* PrayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C3E243DBBCB001DD9CB /* PrayersView.swift */; };
+		69AF8C41243DBBDD001DD9CB /* PrayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C40243DBBDD001DD9CB /* PrayersViewModel.swift */; };
+		69AF8C43243DBC59001DD9CB /* PrayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C42243DBC59001DD9CB /* PrayerRow.swift */; };
 		69DA403B24094D4B00A3D357 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DA403A24094D4B00A3D357 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +52,11 @@
 		69A57200243B1FC200895C25 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		69A57207243B222600895C25 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		69A5720A243B23DA00895C25 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		69AF8C39243DBAC2001DD9CB /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
+		69AF8C3B243DBB11001DD9CB /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		69AF8C3E243DBBCB001DD9CB /* PrayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayersView.swift; sourceTree = "<group>"; };
+		69AF8C40243DBBDD001DD9CB /* PrayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayersViewModel.swift; sourceTree = "<group>"; };
+		69AF8C42243DBC59001DD9CB /* PrayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRow.swift; sourceTree = "<group>"; };
 		69DA403A24094D4B00A3D357 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +116,8 @@
 			children = (
 				69676C2A24095239008639EC /* Item.swift */,
 				69A571FA243B1E5D00895C25 /* Monster.swift */,
+				69AF8C39243DBAC2001DD9CB /* Prayer.swift */,
+				69AF8C3B243DBB11001DD9CB /* Icon.swift */,
 				69A57200243B1FC200895C25 /* HTTP.swift */,
 			);
 			path = models;
@@ -151,8 +163,18 @@
 				69A5720A243B23DA00895C25 /* BaseViewModel.swift */,
 				69A571FE243B1F3F00895C25 /* MonstersViewModel.swift */,
 				69676C28240951E5008639EC /* ItemsViewModel.swift */,
+				69AF8C40243DBBDD001DD9CB /* PrayersViewModel.swift */,
 			);
 			path = viewModels;
+			sourceTree = "<group>";
+		};
+		69AF8C3D243DBBB3001DD9CB /* prayers */ = {
+			isa = PBXGroup;
+			children = (
+				69AF8C3E243DBBCB001DD9CB /* PrayersView.swift */,
+				69AF8C42243DBC59001DD9CB /* PrayerRow.swift */,
+			);
+			path = prayers;
 			sourceTree = "<group>";
 		};
 		69DA403724094CBE00A3D357 /* launch */ = {
@@ -170,6 +192,7 @@
 				69A57206243B221900895C25 /* shared */,
 				69A571F9243B1E4F00895C25 /* monsters */,
 				69676C2C2409640B008639EC /* items */,
+				69AF8C3D243DBBB3001DD9CB /* prayers */,
 				69676C2524095155008639EC /* home */,
 			);
 			path = views;
@@ -255,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A571FB243B1E5D00895C25 /* Monster.swift in Sources */,
+				69AF8C3C243DBB11001DD9CB /* Icon.swift in Sources */,
 				69A571FF243B1F3F00895C25 /* MonstersViewModel.swift in Sources */,
 				69676C33240BBF81008639EC /* ItemRow.swift in Sources */,
 				695EF66C23FE86D600E106F0 /* AppDelegate.swift in Sources */,
@@ -262,13 +286,17 @@
 				69676C2E2409692A008639EC /* HomeView.swift in Sources */,
 				69A571FD243B1F3200895C25 /* MonstersView.swift in Sources */,
 				69676C27240951A9008639EC /* ItemsView.swift in Sources */,
+				69AF8C43243DBC59001DD9CB /* PrayerRow.swift in Sources */,
 				69A57201243B1FC200895C25 /* HTTP.swift in Sources */,
 				695EF66E23FE86D600E106F0 /* SceneDelegate.swift in Sources */,
+				69AF8C3A243DBAC2001DD9CB /* Prayer.swift in Sources */,
 				69676C30240BBDD1008639EC /* ItemDetailView.swift in Sources */,
 				69A5720B243B23DA00895C25 /* BaseViewModel.swift in Sources */,
 				69676C29240951E5008639EC /* ItemsViewModel.swift in Sources */,
+				69AF8C41243DBBDD001DD9CB /* PrayersViewModel.swift in Sources */,
 				69676C2B24095239008639EC /* Item.swift in Sources */,
 				69DA403B24094D4B00A3D357 /* APIService.swift in Sources */,
+				69AF8C3F243DBBCB001DD9CB /* PrayersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

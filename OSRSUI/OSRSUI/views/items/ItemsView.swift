@@ -43,7 +43,7 @@ struct ItemsView: View {
                         ItemRow(item: item)
                     }
                 }
-                if !self.viewModel.objects.isEmpty && viewModel.searchText.isEmpty {
+                if !viewModel.objects.isEmpty && viewModel.searchText.isEmpty && viewModel.canLoadMorePages {
                     Text("Loading next page...")
                         .onAppear {
                             self.viewModel.fetchNextPage()

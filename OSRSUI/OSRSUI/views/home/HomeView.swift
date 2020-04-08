@@ -28,6 +28,8 @@ struct HomeView: View {
                 return AnyView(ItemsView())
             case .monsters:
                 return AnyView(MonstersView())
+            case .prayers:
+                return AnyView(PrayersView())
             default:
                 return AnyView(Text("Work in progress"))
             }
